@@ -4,7 +4,7 @@
 ## clears inverse of previous matrix, creates getter/setter methods and returns them in a vector
 
 makeCacheMatrix <- function(x = matrix()) {
-	inverse <- NULL
+  inverse <- NULL
   set <- function(y) {
     x <<- y
     inverse <<- NULL
@@ -22,13 +22,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-	inverse <- x$getInverse()
-	if(!is.null(inverse)) {
+  inverse <- x$getInverse()
+  if(!is.null(inverse)) {
     message("getting cached data")
     return(inverse)
-	}
-	data <- x$get()
-	inverse <- solve(data)
-	x$setInverse(inverse)
-	inverse
+  }
+  data <- x$get()
+  inverse <- solve(data)
+  x$setInverse(inverse)
+  inverse
 }
